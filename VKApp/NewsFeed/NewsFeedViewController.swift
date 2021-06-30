@@ -45,25 +45,28 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
     setup()
     
     table.register(UINib(nibName: "NewsFeedCell", bundle: nil), forCellReuseIdentifier: NewsFeedCell.reuseId)
+    interactor?.makeRequest(request: .getNewsFeed)
+    table.separatorStyle = .none
+    table.backgroundColor = .clear
+    view.backgroundColor = #colorLiteral(red: 0.3868764043, green: 0.6916590333, blue: 1, alpha: 1)
   }
   
   func displayData(viewModel: NewsFeed.Model.ViewModel.ViewModelData) {
     switch viewModel {
     
-    case .some:
-        print(".some ViewController")
-    case .displayNewsFeed:
-        print(".displayNewsFeed ViewController")
+    case .displayNewsFeed( let feedViewModel):
+        self.feedViewModel = feedViewModel
+        table.reloadData()
     }
-
-  }
   
+}
 }
 
 
 extension NewsFeedViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return feedViewModel.cells.count
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
