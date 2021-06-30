@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol NewsFeedDisplayLogic: class {
+protocol NewsFeedDisplayLogic: AnyObject {
   func displayData(viewModel: NewsFeed.Model.ViewModel.ViewModelData)
 }
 
@@ -45,7 +45,7 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
     setup()
     
     table.register(UINib(nibName: "NewsFeedCell", bundle: nil), forCellReuseIdentifier: NewsFeedCell.reuseId)
-    interactor?.makeRequest(request: .getNewsFeed)
+    interactor?.makeRequest(request: .getNewsfeed)
     table.separatorStyle = .none
     table.backgroundColor = .clear
     view.backgroundColor = #colorLiteral(red: 0.3868764043, green: 0.6916590333, blue: 1, alpha: 1)
@@ -54,7 +54,7 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
   func displayData(viewModel: NewsFeed.Model.ViewModel.ViewModelData) {
     switch viewModel {
     
-    case .displayNewsFeed( let feedViewModel):
+    case .displayNewsfeed(let feedViewModel):
         self.feedViewModel = feedViewModel
         table.reloadData()
     }
@@ -63,10 +63,10 @@ class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
 }
 
 
-extension NewsFeedViewController:UITableViewDelegate,UITableViewDataSource{
+extension NewsFeedViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return feedViewModel.cells.count
-
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -76,10 +76,9 @@ extension NewsFeedViewController:UITableViewDelegate,UITableViewDataSource{
         return cell
     }
     
-
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
+        let cellViewModel = feedViewModel.cells[indexPath.row]
+        return cellViewModel.sizes.totalHeight
     }
     
 }

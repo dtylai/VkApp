@@ -8,25 +8,6 @@
 import Foundation
 import UIKit
 
-protocol  FeedCellViewModel{
-    var name: String{get}
-    var date: String{get}
-    var text: String?{get}
-    var likes: String?{get}
-    var comments: String?{get}
-    var shares: String?{get}
-    var views: String?{get}
-    var iconUrlString: String{get}
-    var photoAttachement: FeedCellPhotoAttachementViewModel? { get }
-    
-}
-
-protocol FeedCellPhotoAttachementViewModel {
-    var photoUrlString: String? { get }
-    var width: Int { get }
-    var height: Int { get }
-}
-
 class NewsFeedCell: UITableViewCell {
     
     static let reuseId = "NewsFeedCell"
@@ -41,19 +22,25 @@ class NewsFeedCell: UITableViewCell {
     @IBOutlet weak var viewsLable: UILabel!
     @IBOutlet weak var postImageView: WebImageView!
     
+    @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var postView: UIView!
+    
+    override func prepareForReuse() {
+        iconImageView.set(imageURL: nil)
+        postImageView.set(imageURL: nil)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         iconImageView.layer.cornerRadius = iconImageView.frame.width / 2
         iconImageView.clipsToBounds = true
         
         postView.layer.cornerRadius = 10
         postView.clipsToBounds = true
         
-        
         backgroundColor = .clear
         selectionStyle = .none
-    
     }
     
     func set(viewModel:FeedCellViewModel){
@@ -65,6 +52,11 @@ class NewsFeedCell: UITableViewCell {
         commentsLable.text = viewModel.comments
         sharesLable.text = viewModel.shares
         viewsLable.text = viewModel.views
+        
+        postLable.frame = viewModel.sizes.postLabelFrame
+        postImageView.frame = viewModel.sizes.attachmentFrame
+        bottomView.frame = viewModel.sizes.bottomViewFrame
+        
         if let photoAttachment = viewModel.photoAttachement {
             postImageView.set(imageURL: photoAttachment.photoUrlString)
             postImageView.isHidden = false
