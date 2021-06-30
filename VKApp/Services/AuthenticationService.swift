@@ -8,10 +8,22 @@
 import Foundation
 import VK_ios_sdk
 
+protocol  AuthenticationServiceDelegate: AnyObject {
+    func authServiceShouldShow(_ viewController:UIViewController)
+    func authServiceSignIn()
+    func authServiceDidSignInFall()
+}
+
 final class AuthenticationService: NSObject, VKSdkDelegate,VKSdkUIDelegate{
 
-    private let appId = "7891158"
+    private let appId = "7891922"
     private let vkSdk: VKSdk
+    
+    weak var delegate: AuthenticationServiceDelegate?
+    
+    var token: String? {
+        return VKSdk.accessToken()?.accessToken
+    }
     
     override init(){
         vkSdk = VKSdk.initialize(withAppId: appId)
@@ -21,10 +33,30 @@ final class AuthenticationService: NSObject, VKSdkDelegate,VKSdkUIDelegate{
         vkSdk.uiDelegate = self
     }
     
+    func wakeUpSession(){
+        let scope = ["wall", "friends","offline"]
+        
+        VKSdk.wakeUpSession(scope) {[delegate] (state, error) in
+            if state == VKAuthorizationState.authorized{
+                print("VKAuthorizationState.authorized")
+                delegate?.authServiceSignIn()
+            } else if state == VKAuthorizationState.initialized{
+                print("VKAuthorizationState.initialized")
+                VKSdk.authorize(scope)
+            } else{
+                print("auth problem, state \(state) error \(String(describing: error))")
+                delegate?.authServiceDidSignInFall()
+            }
+        }
+    }
     // MARK: VKSdkDelegate
     
     func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
         print(#function)
+        if result.token != nil{
+            delegate?.authServiceSignIn()
+        }
+    
     }
     
     func vkSdkUserAuthorizationFailed() {
@@ -35,6 +67,7 @@ final class AuthenticationService: NSObject, VKSdkDelegate,VKSdkUIDelegate{
     
     func vkSdkShouldPresent(_ controller: UIViewController!) {
         print(#function)
+        delegate?.authServiceShouldShow(controller)
     }
     
     func vkSdkNeedCaptchaEnter(_ captchaError: VKError!) {

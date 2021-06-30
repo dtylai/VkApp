@@ -7,28 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		948A88B4268C7683006F6652 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948A88B3268C7683006F6652 /* FeedViewController.swift */; };
+		948A88B6268C7696006F6652 /* FeedViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 948A88B5268C7696006F6652 /* FeedViewController.storyboard */; };
+		948A88B8268C7B6E006F6652 /* UIViewControllerAndSB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948A88B7268C7B6D006F6652 /* UIViewControllerAndSB.swift */; };
+		948A88BC268C7FAB006F6652 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948A88BB268C7FAB006F6652 /* NetworkService.swift */; };
+		948A88BE268C7FEA006F6652 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948A88BD268C7FEA006F6652 /* API.swift */; };
 		94C2820A268B65BF00A4D8AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C28209268B65BF00A4D8AD /* AppDelegate.swift */; };
-		94C2820C268B65BF00A4D8AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C2820B268B65BF00A4D8AD /* SceneDelegate.swift */; };
-		94C2820E268B65BF00A4D8AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C2820D268B65BF00A4D8AD /* ViewController.swift */; };
-		94C28211268B65BF00A4D8AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94C2820F268B65BF00A4D8AD /* Main.storyboard */; };
 		94C28213268B65C100A4D8AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94C28212268B65C100A4D8AD /* Assets.xcassets */; };
 		94C28216268B65C100A4D8AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94C28214268B65C100A4D8AD /* LaunchScreen.storyboard */; };
 		94C2821F268B858600A4D8AD /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C2821E268B858600A4D8AD /* AuthenticationService.swift */; };
+		94C28228268B8EA200A4D8AD /* AuthentificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C28227268B8EA200A4D8AD /* AuthentificationViewController.swift */; };
+		94C28229268B95C200A4D8AD /* AuthentificationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94C28222268B8CA500A4D8AD /* AuthentificationViewController.storyboard */; };
 		FFBB09547DBB0AE9F506D6ED /* Pods_VKApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7266ED5630246F0A556913B9 /* Pods_VKApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		00ACB927EF0AC6A6C9942FE8 /* Pods-VKApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKApp.release.xcconfig"; path = "Target Support Files/Pods-VKApp/Pods-VKApp.release.xcconfig"; sourceTree = "<group>"; };
 		7266ED5630246F0A556913B9 /* Pods_VKApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		948A88B3268C7683006F6652 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		948A88B5268C7696006F6652 /* FeedViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FeedViewController.storyboard; sourceTree = "<group>"; };
+		948A88B7268C7B6D006F6652 /* UIViewControllerAndSB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerAndSB.swift; sourceTree = "<group>"; };
+		948A88BB268C7FAB006F6652 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		948A88BD268C7FEA006F6652 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		94C28206268B65BF00A4D8AD /* VKApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94C28209268B65BF00A4D8AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		94C2820B268B65BF00A4D8AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		94C2820D268B65BF00A4D8AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		94C28210268B65BF00A4D8AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94C28212268B65C100A4D8AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94C28215268B65C100A4D8AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94C28217268B65C100A4D8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94C2821E268B858600A4D8AD /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		94C28222268B8CA500A4D8AD /* AuthentificationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthentificationViewController.storyboard; sourceTree = "<group>"; };
+		94C28227268B8EA200A4D8AD /* AuthentificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationViewController.swift; sourceTree = "<group>"; };
 		E2E216B48FB8ED614EDCA73A /* Pods-VKApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKApp.debug.xcconfig"; path = "Target Support Files/Pods-VKApp/Pods-VKApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,6 +60,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		948A88B9268C7B7B006F6652 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				948A88B7268C7B6D006F6652 /* UIViewControllerAndSB.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		948A88BA268C7F94006F6652 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				948A88B3268C7683006F6652 /* FeedViewController.swift */,
+				948A88B5268C7696006F6652 /* FeedViewController.storyboard */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
 		94C281FD268B65BF00A4D8AD = {
 			isa = PBXGroup;
 			children = (
@@ -73,11 +98,11 @@
 		94C28208268B65BF00A4D8AD /* VKApp */ = {
 			isa = PBXGroup;
 			children = (
+				948A88BA268C7F94006F6652 /* Feed */,
+				94C28224268B8CC900A4D8AD /* Authentification */,
 				94C2821D268B853200A4D8AD /* Services */,
 				94C28209268B65BF00A4D8AD /* AppDelegate.swift */,
-				94C2820B268B65BF00A4D8AD /* SceneDelegate.swift */,
-				94C2820D268B65BF00A4D8AD /* ViewController.swift */,
-				94C2820F268B65BF00A4D8AD /* Main.storyboard */,
+				948A88B9268C7B7B006F6652 /* Helpers */,
 				94C28212268B65C100A4D8AD /* Assets.xcassets */,
 				94C28214268B65C100A4D8AD /* LaunchScreen.storyboard */,
 				94C28217268B65C100A4D8AD /* Info.plist */,
@@ -89,8 +114,19 @@
 			isa = PBXGroup;
 			children = (
 				94C2821E268B858600A4D8AD /* AuthenticationService.swift */,
+				948A88BB268C7FAB006F6652 /* NetworkService.swift */,
+				948A88BD268C7FEA006F6652 /* API.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		94C28224268B8CC900A4D8AD /* Authentification */ = {
+			isa = PBXGroup;
+			children = (
+				94C28222268B8CA500A4D8AD /* AuthentificationViewController.storyboard */,
+				94C28227268B8EA200A4D8AD /* AuthentificationViewController.swift */,
+			);
+			path = Authentification;
 			sourceTree = "<group>";
 		};
 		EA90A6B9B5EBE2B0DF23810B /* Pods */ = {
@@ -163,7 +199,8 @@
 			files = (
 				94C28216268B65C100A4D8AD /* LaunchScreen.storyboard in Resources */,
 				94C28213268B65C100A4D8AD /* Assets.xcassets in Resources */,
-				94C28211268B65BF00A4D8AD /* Main.storyboard in Resources */,
+				94C28229268B95C200A4D8AD /* AuthentificationViewController.storyboard in Resources */,
+				948A88B6268C7696006F6652 /* FeedViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,24 +253,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94C2820E268B65BF00A4D8AD /* ViewController.swift in Sources */,
 				94C2820A268B65BF00A4D8AD /* AppDelegate.swift in Sources */,
-				94C2820C268B65BF00A4D8AD /* SceneDelegate.swift in Sources */,
+				94C28228268B8EA200A4D8AD /* AuthentificationViewController.swift in Sources */,
+				948A88B8268C7B6E006F6652 /* UIViewControllerAndSB.swift in Sources */,
+				948A88B4268C7683006F6652 /* FeedViewController.swift in Sources */,
+				948A88BC268C7FAB006F6652 /* NetworkService.swift in Sources */,
 				94C2821F268B858600A4D8AD /* AuthenticationService.swift in Sources */,
+				948A88BE268C7FEA006F6652 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		94C2820F268B65BF00A4D8AD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				94C28210268B65BF00A4D8AD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		94C28214268B65C100A4D8AD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -370,6 +402,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DY69TQ5DW9;
 				INFOPLIST_FILE = VKApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -390,6 +423,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DY69TQ5DW9;
 				INFOPLIST_FILE = VKApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
