@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94338F38268E338600591824 /* AccountProfilePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94338F31268E338600591824 /* AccountProfilePresenter.swift */; };
+		94338F39268E338600591824 /* AccountProfileWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94338F32268E338600591824 /* AccountProfileWorker.swift */; };
+		94338F3A268E338600591824 /* AccountProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94338F33268E338600591824 /* AccountProfileRouter.swift */; };
+		94338F3B268E338600591824 /* AccountProfileModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94338F34268E338600591824 /* AccountProfileModels.swift */; };
+		94338F3C268E338600591824 /* AccountProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94338F35268E338600591824 /* AccountProfileViewController.swift */; };
+		94338F3D268E338600591824 /* AccountProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94338F36268E338600591824 /* AccountProfileInteractor.swift */; };
 		948A88B8268C7B6E006F6652 /* UIViewControllerAndSB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948A88B7268C7B6D006F6652 /* UIViewControllerAndSB.swift */; };
 		948A88BC268C7FAB006F6652 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948A88BB268C7FAB006F6652 /* NetworkService.swift */; };
 		948A88BE268C7FEA006F6652 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948A88BD268C7FEA006F6652 /* API.swift */; };
@@ -35,12 +41,19 @@
 		94C2821F268B858600A4D8AD /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C2821E268B858600A4D8AD /* AuthenticationService.swift */; };
 		94C28228268B8EA200A4D8AD /* AuthentificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C28227268B8EA200A4D8AD /* AuthentificationViewController.swift */; };
 		94C28229268B95C200A4D8AD /* AuthentificationViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94C28222268B8CA500A4D8AD /* AuthentificationViewController.storyboard */; };
+		94C3724F268E47D000DA6CEE /* AccountProfileViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94C3724E268E47D000DA6CEE /* AccountProfileViewController.storyboard */; };
 		FFBB09547DBB0AE9F506D6ED /* Pods_VKApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7266ED5630246F0A556913B9 /* Pods_VKApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		00ACB927EF0AC6A6C9942FE8 /* Pods-VKApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKApp.release.xcconfig"; path = "Target Support Files/Pods-VKApp/Pods-VKApp.release.xcconfig"; sourceTree = "<group>"; };
 		7266ED5630246F0A556913B9 /* Pods_VKApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94338F31268E338600591824 /* AccountProfilePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountProfilePresenter.swift; sourceTree = "<group>"; };
+		94338F32268E338600591824 /* AccountProfileWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountProfileWorker.swift; sourceTree = "<group>"; };
+		94338F33268E338600591824 /* AccountProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountProfileRouter.swift; sourceTree = "<group>"; };
+		94338F34268E338600591824 /* AccountProfileModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountProfileModels.swift; sourceTree = "<group>"; };
+		94338F35268E338600591824 /* AccountProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountProfileViewController.swift; sourceTree = "<group>"; };
+		94338F36268E338600591824 /* AccountProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountProfileInteractor.swift; sourceTree = "<group>"; };
 		948A88B7268C7B6D006F6652 /* UIViewControllerAndSB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerAndSB.swift; sourceTree = "<group>"; };
 		948A88BB268C7FAB006F6652 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		948A88BD268C7FEA006F6652 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -71,6 +84,7 @@
 		94C2821E268B858600A4D8AD /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		94C28222268B8CA500A4D8AD /* AuthentificationViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthentificationViewController.storyboard; sourceTree = "<group>"; };
 		94C28227268B8EA200A4D8AD /* AuthentificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthentificationViewController.swift; sourceTree = "<group>"; };
+		94C3724E268E47D000DA6CEE /* AccountProfileViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AccountProfileViewController.storyboard; sourceTree = "<group>"; };
 		E2E216B48FB8ED614EDCA73A /* Pods-VKApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKApp.debug.xcconfig"; path = "Target Support Files/Pods-VKApp/Pods-VKApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +106,20 @@
 				7266ED5630246F0A556913B9 /* Pods_VKApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94338F30268E336800591824 /* AccountProfile */ = {
+			isa = PBXGroup;
+			children = (
+				94338F31268E338600591824 /* AccountProfilePresenter.swift */,
+				94338F32268E338600591824 /* AccountProfileWorker.swift */,
+				94338F33268E338600591824 /* AccountProfileRouter.swift */,
+				94338F34268E338600591824 /* AccountProfileModels.swift */,
+				94338F35268E338600591824 /* AccountProfileViewController.swift */,
+				94338F36268E338600591824 /* AccountProfileInteractor.swift */,
+				94C3724E268E47D000DA6CEE /* AccountProfileViewController.storyboard */,
+			);
+			path = AccountProfile;
 			sourceTree = "<group>";
 		};
 		948A88B9268C7B7B006F6652 /* Helpers */ = {
@@ -171,6 +199,7 @@
 		94C28208268B65BF00A4D8AD /* VKApp */ = {
 			isa = PBXGroup;
 			children = (
+				94338F30268E336800591824 /* AccountProfile */,
 				94C28209268B65BF00A4D8AD /* AppDelegate.swift */,
 				94C2821D268B853200A4D8AD /* Services */,
 				948A88C9268CAA40006F6652 /* NewsFeed */,
@@ -277,6 +306,7 @@
 				948A88EE268CBA0F006F6652 /* NewsFeedCell.xib in Resources */,
 				94C28229268B95C200A4D8AD /* AuthentificationViewController.storyboard in Resources */,
 				948A88E9268CAF38006F6652 /* NewsFeedViewController.storyboard in Resources */,
+				94C3724F268E47D000DA6CEE /* AccountProfileViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,15 +364,21 @@
 				94C2820A268B65BF00A4D8AD /* AppDelegate.swift in Sources */,
 				94C28228268B8EA200A4D8AD /* AuthentificationViewController.swift in Sources */,
 				948A88E6268CAF26006F6652 /* NewsFeedInteractor.swift in Sources */,
+				94338F39268E338600591824 /* AccountProfileWorker.swift in Sources */,
 				948A88B8268C7B6E006F6652 /* UIViewControllerAndSB.swift in Sources */,
 				948A8900268D91B0006F6652 /* Constants.swift in Sources */,
 				948A88BC268C7FAB006F6652 /* NetworkService.swift in Sources */,
 				948A88C3268C8FF2006F6652 /* NetworkDataFetcher.swift in Sources */,
 				948A88E2268CAF26006F6652 /* NewsFeedWorker.swift in Sources */,
 				948A88F0268CDFAC006F6652 /* WebImageView.swift in Sources */,
+				94338F3D268E338600591824 /* AccountProfileInteractor.swift in Sources */,
+				94338F3B268E338600591824 /* AccountProfileModels.swift in Sources */,
+				94338F3A268E338600591824 /* AccountProfileRouter.swift in Sources */,
+				94338F3C268E338600591824 /* AccountProfileViewController.swift in Sources */,
 				948A88FD268D00EC006F6652 /* ExtString.swift in Sources */,
 				948A88F9268CFBDF006F6652 /* NewsfeedCellLayoutCalculator.swift in Sources */,
 				948A88E3268CAF26006F6652 /* NewsFeedRouter.swift in Sources */,
+				94338F38268E338600591824 /* AccountProfilePresenter.swift in Sources */,
 				94C2821F268B858600A4D8AD /* AuthenticationService.swift in Sources */,
 				948A88F2268CFA70006F6652 /* FeedCellViewModelProtocol.swift in Sources */,
 				948A88BE268C7FEA006F6652 /* API.swift in Sources */,

@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--News Feed View Controller-->
+        <!--Item-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="NewsFeedViewController" customModule="VKApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8pl-cz-eoj">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="L0Y-Dk-AG7"/>
@@ -27,14 +27,19 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="8pl-cz-eoj" secondAttribute="bottom" id="FIe-IR-WUb"/>
+                            <constraint firstItem="8pl-cz-eoj" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="6yq-mN-lqp"/>
                             <constraint firstItem="8pl-cz-eoj" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="KIR-k5-LWr"/>
                             <constraint firstItem="8pl-cz-eoj" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="YN4-Z4-aoe"/>
+                            <constraint firstItem="8pl-cz-eoj" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="gVb-zv-iPt"/>
+                            <constraint firstItem="8pl-cz-eoj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="krm-hq-Sci"/>
                             <constraint firstItem="8pl-cz-eoj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="mNB-w1-X2r"/>
+                            <constraint firstItem="8pl-cz-eoj" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="miF-i5-xYf"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Vih-hX-QYL"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="table" destination="8pl-cz-eoj" id="ILZ-IH-tCj"/>
                     </connections>
@@ -43,13 +48,18 @@
             </objects>
             <point key="canvasLocation" x="11.594202898550726" y="37.5"/>
         </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="2EV-a7-PN6">
+            <objects>
+                <viewControllerPlaceholder id="WFA-Th-Wvr" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oQ9-xe-8xc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476" y="262"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
