@@ -33,7 +33,7 @@ class NewsFeedCell: UITableViewCell {
     }
     
     @IBAction func moreTextButtonClick(_ sender: Any) {
-       // Add implementation
+        // Add implementation
         
     }
     override func awakeFromNib() {

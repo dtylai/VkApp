@@ -8,12 +8,12 @@
 import UIKit
 
 class AuthentificationViewController: UIViewController {
-
+    
     
     private var authService: AuthenticationService!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         //authService = AuthService()
         authService = AppDelegate.shared().authService
@@ -22,6 +22,6 @@ class AuthentificationViewController: UIViewController {
         authService.wakeUpSession()
     }
     
-
-
+    
+    
 }

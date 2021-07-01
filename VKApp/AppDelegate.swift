@@ -9,7 +9,7 @@ import UIKit
 import VK_ios_sdk
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, AuthenticationServiceDelegate {
-
+    
     
     var window: UIWindow?
     
@@ -30,12 +30,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AuthenticationServiceDele
         window?.makeKeyAndVisible()
         return true
     }
-
+    
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         VKSdk.processOpen(url, fromApplication: UIApplication.OpenURLOptionsKey.sourceApplication.rawValue)
         return true
     }
-
+    
     
     
     // MARK: AuthentificationServiceDelegate
@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AuthenticationServiceDele
     func authServiceDidSignInFall() {
         print(#function)
     }
-
-
+    
+    
 }
 

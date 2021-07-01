@@ -29,6 +29,7 @@ final class NetworkService : Networking{
         let task = createDataTask(from: request, completion: completion)
         task.resume()
         print(url)
+        print("request")
     }
     private func createDataTask(from request: URLRequest, completion: @escaping (Data?, Error?) -> Void) -> URLSessionDataTask {
         return URLSession.shared.dataTask(with: request, completionHandler: { (data, response, error) in
@@ -37,7 +38,7 @@ final class NetworkService : Networking{
             }
         })
     }
-
+    
     
     private func url(from path: String, params: [String: String]) -> URL {
         var components = URLComponents()

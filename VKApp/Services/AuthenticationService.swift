@@ -15,7 +15,7 @@ protocol  AuthenticationServiceDelegate: AnyObject {
 }
 
 final class AuthenticationService: NSObject, VKSdkDelegate,VKSdkUIDelegate{
-
+    
     private let appId = "7891922"
     private let vkSdk: VKSdk
     
@@ -56,7 +56,7 @@ final class AuthenticationService: NSObject, VKSdkDelegate,VKSdkUIDelegate{
         if result.token != nil{
             delegate?.authServiceSignIn()
         }
-    
+        
     }
     
     func vkSdkUserAuthorizationFailed() {

@@ -25,14 +25,14 @@ final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
     init(screenWidth: CGFloat = min(UIScreen.main.bounds.width, UIScreen.main.bounds.height)) {
         self.screenWidth = screenWidth
     }
-
+    
     func sizes(postText: String?, photoAttachment: FeedCellPhotoAttachementViewModel?) -> FeedCellSizes {
         
         var showMoreTextButton = false
         
         let cardViewWidth = screenWidth - Constants.cardInsets.left - Constants.cardInsets.right
         
-    
+        
         // MARK: Работа с postLabelFrame
         
         var postLabelFrame = CGRect(origin: CGPoint(x: Constants.postLabelInsets.left, y: Constants.postLabelInsets.top),
@@ -94,5 +94,5 @@ final class FeedCellLayoutCalculator: FeedCellLayoutCalculatorProtocol {
                      moreTextButtonFrame:  moreTextButtonFrame)
     }
     
-
+    
 }

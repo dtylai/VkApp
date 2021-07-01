@@ -9,57 +9,86 @@
 import UIKit
 
 protocol NewsFeedDisplayLogic: AnyObject {
-  func displayData(viewModel: NewsFeed.Model.ViewModel.ViewModelData)
+    func displayData(viewModel: NewsFeed.Model.ViewModel.ViewModelData)
 }
 
 class NewsFeedViewController: UIViewController, NewsFeedDisplayLogic {
-
-  var interactor: NewsFeedBusinessLogic?
-  var router: (NSObjectProtocol & NewsFeedRoutingLogic)?
+    
+    var interactor: NewsFeedBusinessLogic?
+    var router: (NSObjectProtocol & NewsFeedRoutingLogic)?
     private var feedViewModel = FeedViewModel.init(cells: [])
-
+    
     @IBOutlet weak var table: UITableView!
     
-  // MARK: Setup
-  
-  private func setup() {
-    let viewController        = self
-    let interactor            = NewsFeedInteractor()
-    let presenter             = NewsFeedPresenter()
-    let router                = NewsFeedRouter()
-    viewController.interactor = interactor
-    viewController.router     = router
-    interactor.presenter      = presenter
-    presenter.viewController  = viewController
-    router.viewController     = viewController
-  }
-  
-  // MARK: Routing
-  
-
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    setup()
+    private var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        return refreshControl
+    }()
     
-    table.register(UINib(nibName: "NewsFeedCell", bundle: nil), forCellReuseIdentifier: NewsFeedCell.reuseId)
-    interactor?.makeRequest(request: .getNewsfeed)
-    table.separatorStyle = .none
-    table.backgroundColor = .clear
-    view.backgroundColor = #colorLiteral(red: 0.3868764043, green: 0.6916590333, blue: 1, alpha: 1)
-  }
-  
-  func displayData(viewModel: NewsFeed.Model.ViewModel.ViewModelData) {
-    switch viewModel {
     
-    case .displayNewsfeed(let feedViewModel):
-        self.feedViewModel = feedViewModel
-        table.reloadData()
+    // MARK: Setup
+    
+    private func setup() {
+        let viewController        = self
+        let interactor            = NewsFeedInteractor()
+        let presenter             = NewsFeedPresenter()
+        let router                = NewsFeedRouter()
+        viewController.interactor = interactor
+        viewController.router     = router
+        interactor.presenter      = presenter
+        presenter.viewController  = viewController
+        router.viewController     = viewController
     }
-  
-}
+    
+    // MARK: Routing
+    
+    
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setup()
+        setupTable()
+        interactor?.makeRequest(request: .getNewsfeed)
+        view.backgroundColor = #colorLiteral(red: 0.3868764043, green: 0.6916590333, blue: 1, alpha: 1)
+    }
+    
+    
+    private func setupTable() {
+        let topInset: CGFloat = 8
+        table.contentInset.top = topInset
+        table.register(UINib(nibName: "NewsFeedCell", bundle: nil), forCellReuseIdentifier: NewsFeedCell.reuseId)
+        table.separatorStyle = .none
+        table.backgroundColor = .clear
+        
+        table.addSubview(refreshControl)
+    }
+    
+    @objc private func refresh() {
+        
+        interactor?.makeRequest(request: .getNewsfeed)
+        
+    }
+    
+    func displayData(viewModel: NewsFeed.Model.ViewModel.ViewModelData) {
+        switch viewModel {
+        
+        case .displayNewsfeed(let feedViewModel):
+            self.feedViewModel = feedViewModel
+            refreshControl.endRefreshing()
+            table.reloadData()
+            
+        }
+        
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if scrollView.contentOffset.y > scrollView.contentSize.height / 2{
+            print("123")
+        }
+    }
 }
 
 

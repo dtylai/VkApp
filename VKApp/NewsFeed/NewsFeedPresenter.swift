@@ -9,7 +9,7 @@
 import UIKit
 
 protocol NewsFeedPresentationLogic {
-  func presentData(response: NewsFeed.Model.Response.ResponseType)
+    func presentData(response: NewsFeed.Model.Response.ResponseType)
 }
 
 class NewsFeedPresenter: NewsFeedPresentationLogic {
@@ -18,23 +18,23 @@ class NewsFeedPresenter: NewsFeedPresentationLogic {
     var cellLayoutCalculator: FeedCellLayoutCalculatorProtocol = FeedCellLayoutCalculator()
     
     let dateFormatter: DateFormatter = {
-       let dt = DateFormatter()
+        let dt = DateFormatter()
         dt.locale = Locale(identifier: "ru_RU")
         dt.dateFormat = "d MMM 'в' HH:mm"
         return dt
     }()
-  
-  func presentData(response: NewsFeed.Model.Response.ResponseType) {
-  
-    switch response {
-    case .presentNewsfeed(let feed):
-        let cells = feed.items.map { (feedItem) in
-            cellViewModel(from: feedItem, profiles: feed.profiles, groups: feed.groups)
+    
+    func presentData(response: NewsFeed.Model.Response.ResponseType) {
+        
+        switch response {
+        case .presentNewsfeed(let feed):
+            let cells = feed.items.map { (feedItem) in
+                cellViewModel(from: feedItem, profiles: feed.profiles, groups: feed.groups)
+            }
+            let feedViewModel = FeedViewModel.init(cells: cells)
+            viewController?.displayData(viewModel: NewsFeed.Model.ViewModel.ViewModelData.displayNewsfeed(feedViewModel: feedViewModel))
         }
-        let feedViewModel = FeedViewModel.init(cells: cells)
-        viewController?.displayData(viewModel: NewsFeed.Model.ViewModel.ViewModelData.displayNewsfeed(feedViewModel: feedViewModel))
     }
-  }
     
     private func cellViewModel(from feedItem: FeedItem, profiles: [Profile], groups: [Group]) -> FeedViewModel.Cell {
         
