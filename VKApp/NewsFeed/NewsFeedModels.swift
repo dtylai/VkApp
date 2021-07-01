@@ -14,6 +14,7 @@ enum NewsFeed {
         struct Request {
             enum RequestType {
                 case getNewsfeed
+                case getNextBatch
             }
         }
         struct Response {
