@@ -8,20 +8,20 @@
 import Foundation
 
 protocol DataFetcher {
-    func getFeed(response: @escaping (FeedResponse?)->Void)
+    func getFeed(response: @escaping (FeedResponse?) -> Void)
 }
 
-struct NetworkDataFetcher:DataFetcher{
-
+struct NetworkDataFetcher: DataFetcher {
     
     let networking: Networking
     
     init(networking: Networking) {
         self.networking = networking
     }
+    
     func getFeed(response: @escaping (FeedResponse?) -> Void) {
         
-        let params = ["domains":"wsj.com"]
+        let params = ["filters": "post, photo"]
         networking.request(path: API.newsFeed, params: params) { (data, error) in
             if let error = error {
                 print("Error received requesting data: \(error.localizedDescription)")
@@ -32,6 +32,7 @@ struct NetworkDataFetcher:DataFetcher{
             response(decoded?.response)
         }
     }
+    
     private func decodeJSON<T: Decodable>(type: T.Type, from: Data?) -> T? {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase

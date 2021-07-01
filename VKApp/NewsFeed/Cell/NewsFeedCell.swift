@@ -25,11 +25,17 @@ class NewsFeedCell: UITableViewCell {
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var postView: UIView!
     
+    @IBOutlet weak var moreTextButton: UIButton!
+    
     override func prepareForReuse() {
         iconImageView.set(imageURL: nil)
         postImageView.set(imageURL: nil)
     }
     
+    @IBAction func moreTextButtonClick(_ sender: Any) {
+       // Add implementation
+        
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -42,6 +48,7 @@ class NewsFeedCell: UITableViewCell {
         backgroundColor = .clear
         selectionStyle = .none
     }
+    
     
     func set(viewModel:FeedCellViewModel){
         iconImageView.set(imageURL: viewModel.iconUrlString)
@@ -56,7 +63,7 @@ class NewsFeedCell: UITableViewCell {
         postLable.frame = viewModel.sizes.postLabelFrame
         postImageView.frame = viewModel.sizes.attachmentFrame
         bottomView.frame = viewModel.sizes.bottomViewFrame
-        
+        moreTextButton.frame = viewModel.sizes.moreTextButtonFrame
         if let photoAttachment = viewModel.photoAttachement {
             postImageView.set(imageURL: photoAttachment.photoUrlString)
             postImageView.isHidden = false

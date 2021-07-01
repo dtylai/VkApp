@@ -7,17 +7,17 @@
 
 import Foundation
 
-struct FeedResponseWrapped: Decodable{
-    let response : FeedResponse
+struct FeedResponseWrapped: Decodable {
+    let response: FeedResponse
 }
 
-struct FeedResponse: Decodable{
+struct FeedResponse: Decodable {
     var items: [FeedItem]
     var profiles: [Profile]
     var groups: [Group]
 }
 
-struct FeedItem:Decodable {
+struct FeedItem: Decodable {
     let sourceId: Int
     let postId: Int
     let text: String?
@@ -65,8 +65,9 @@ struct PhotoSize: Decodable {
     let width: Int
     let height: Int
 }
-struct CountableItem:Decodable{
-    let count:Int
+
+struct CountableItem: Decodable {
+    let count: Int
 }
 
 protocol ProfileRepresenatable {

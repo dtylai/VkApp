@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B08-uO-vms">
-                                <rect key="frame" x="8" y="67" width="430" height="40"/>
+                                <rect key="frame" x="8" y="64" width="430" height="22"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -132,6 +132,17 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j8n-Vi-Ekp">
+                                <rect key="frame" x="0.0" y="94" width="164" height="22"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <state key="normal" title="Показать полностью...">
+                                    <color key="titleColor" red="0.55003950437547366" green="0.71287748303036613" blue="0.80722531405362219" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="moreTextButtonClick:" destination="NPc-E1-c8V" eventType="touchUpInside" id="cLq-zf-w7K"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -143,6 +154,7 @@
                 <outlet property="dateLable" destination="2A1-6s-fEM" id="ZQd-8O-80S"/>
                 <outlet property="iconImageView" destination="XR5-aE-DE4" id="oWF-Gb-vut"/>
                 <outlet property="likesLable" destination="fdw-gD-6JT" id="RkI-zI-zvh"/>
+                <outlet property="moreTextButton" destination="j8n-Vi-Ekp" id="ypB-fj-sG3"/>
                 <outlet property="nameLable" destination="qUe-Ol-mRi" id="bsh-Dt-bHy"/>
                 <outlet property="postImageView" destination="Nfy-gB-XqK" id="AQg-4c-IV1"/>
                 <outlet property="postLable" destination="B08-uO-vms" id="EPB-oV-dDT"/>
